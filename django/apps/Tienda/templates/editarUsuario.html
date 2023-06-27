@@ -1,0 +1,28 @@
+{% extends './base.html' %}
+
+{% block body %}
+    <h1>Editar producto</h1>
+
+    <div class="container">
+        <form action="/editarUsuario" method="POST" enctype="multipart/form-data">{% csrf_token %}
+            <div class="row">
+                <div class="col-md-4">
+                    <label for="txtNombre">Nombre:</label>
+                    <input readonly value="{{u.nombre}}" name="txtNombre" id="txtNombre" type="text" class="form-control">
+                </div>
+
+                <div class="col-md-8">
+                    <label for="txtCorreo">Correo:</label>
+                    <input value="{{u.correo}}" name="txtCorreo" id="txtCorreo" type="text" class="form-control">
+                </div>
+
+                <div class="col-md-4">
+                    <label for="txtContraseña">Contraseña:</label>
+                    <input value="{{u.contraseña}}" name="txtContraseña" id="txtContraseña" type="text" class="form-control">
+                </div>
+            </div>
+            <button class="btn btn-success mt-5 w-100">Editar Usuario</button>
+        </form>
+    </div>
+
+    {% endblock %}

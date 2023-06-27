@@ -1,0 +1,40 @@
+h1{
+    color: red;
+}
+
+.dark-mode {
+    background-color: #222;
+    color: #fff;
+}
+  
+.dark-mode h1 {
+    color: #ff0;
+}
+  
+.dark-mode p {
+    color: #ccc;
+}
+  
+.carrito {
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+  .carrito ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .carrito li {
+    margin-bottom: 10px;
+  }
+  
+  .carrito .nombre {
+    font-weight: bold;
+  }
+  
+  .carrito .precio {
+    color: green;
+  }
+
+  

@@ -1,0 +1,38 @@
+{% extends './base.html' %}
+
+{% block body %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Agregar Usuarios</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>Agregar Usuarios</h1>
+    <div class="container">
+        <form action="/agregarUsuarioForm" method="POST" enctype="multipart/form-data">{% csrf_token %}
+            <div class="row">
+                <div class="col-md-4">
+                    <label for="txtNombre">Nombre:</label>
+                    <input name="txtNombre" id="txtNombre" type="text" class="form-control">
+                </div>
+
+                <div class="col-md-4">
+                    <label for="txtCorreo">Correo:</label>
+                    <input name="txtCorreo" id="txtCorreo" type="text" class="form-control">
+                </div>
+
+                <div class="col-md-4">
+                    <label for="txtContraseña">Contraseña:</label>
+                    <input name="txtContraseña" id="txtContraseña" type="text" class="form-control">
+                </div>
+            </div>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Agregar Usuario</button>
+            </form>            
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends "./base.html" %}
+
+{% block body %}
+
+{% load static %}
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <div class="container">
+        <div class="row mt-5">
+            <h2>Planta</h2>
+            {% for p in cate_planta %}
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                  <span id="titulo" class="titulo-item"></span>
+                    <img src="{{p.imagenUrl.url}}"
+                    class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">{{p.nombre}}</h5>
+                      <p class="card-text">Estas plantas artificiales son muy realistas y se conservan como nuevas año tras año.
+
+                        Es ideal si no puedes tener plantas naturales, pero quieres disfrutar de la belleza de la naturaleza.</p>
+                      <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                    </div>
+                  </div>
+            </div>
+
+            
+
+            {% endfor %}
+        </div>
+
+
+
+
+
+        <div class="row mt-5">
+            <h2>Jardinería</h2>
+            {% for p in cate_jardineria %}
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="{{p.imagenUrl.url}}"  class="card-img-top" alt="..."  >
+                    <div class="card-body">
+                      <h5 class="card-title">{{p.nombre}}</h5>
+                      <p class="card-text">La regadera es funcional y decorativa a la vez.
+
+                        Un adorno sorprendente y divertido que producirá un gran efecto en tu hogar.
+                        
+                        Al ser de acero galvanizado, la regadera no se oxida.</p>
+                      <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                    </div>
+                  </div>
+            </div>
+
+            
+            {% endfor %}
+        </div>
+
+
+    </div>
+    
+
+    <script src="{% static 'js/funciones.js' %}"></script>
+    
+{% endblock %}

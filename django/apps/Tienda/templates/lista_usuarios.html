@@ -1,0 +1,37 @@
+{% extends './base.html' %}
+
+{% block body %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tabla de Usuarios</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>Tabla de Usuarios</h1>
+    <div class="container mt-5">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Correo</th>
+                <th scope="col">Contraseña</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for u in usuarios %}
+              <tr>
+                <th scope="row">{{u.nombre}}</th>
+                <td>{{u.correo}}</td>
+                <td>{{u.contraseña}}</td>
+                <td><a href="editarUsuario/{{u.nombre}}" class="btn btn-primary">Editar</a></td>
+                <td><a href="eliminarUsuario/{{u.nombre}}" class="btn btn-danger">Eliminar</a></td>
+              </tr>
+                {% endfor %}
+            </tbody>
+          </table>
+        </div>
+    </body>
+    </html> 
+{% endblock %}

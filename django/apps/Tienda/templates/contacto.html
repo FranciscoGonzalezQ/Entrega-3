@@ -1,0 +1,21 @@
+{% extends './base.html' %}
+
+{% block content %}
+
+<h2>Contactanos!</h2>
+<form action="" class="formulario_contacto" method="POSAT">
+    {% csrf_token %}
+
+    {{ form }}
+
+    <br>
+    <button type="submmit" id="btnEnviar" class="buttom">Enviar</button>
+    
+</form>
+{{mensaje}}
+<table id="tablacontactos">
+
+
+</table>
+
+{% endblock %}
